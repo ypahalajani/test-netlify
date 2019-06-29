@@ -16,8 +16,7 @@
     "react-styleguidist": "^9.1.11",
     "style-loader": "0.23.0",
     "webpack": "4.19.1",
-    "webpack-cli": "3.1.1",
-    "webpack-dev-server": "3.1.8"
+    "webpack-cli": "3.1.1"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
@@ -27,9 +26,8 @@
     "styled-components": "^4.3.2"
   },
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server",
-    "build": "NODE_ENV=production webpack",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "build:webpack": "NODE_ENV=production webpack",
+    "start": "styleguidist server",
+    "build:styleguide": "styleguidist build"
   }
 }
