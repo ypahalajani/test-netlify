@@ -1,9 +1,10 @@
 const path = require("path");
 const webpack = require("webpack");
 
+console.log('Node environment: ', process.env.NODE_ENV);
+
 module.exports = {
   entry: "./src/index.js",
-  mode: "development",
   module: {
     rules: [
       {
@@ -20,15 +21,9 @@ module.exports = {
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
+    path: path.resolve(__dirname, "./dist"),
+    publicPath: "/",
     filename: "bundle.js"
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "public/"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 };

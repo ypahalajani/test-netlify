@@ -13,17 +13,23 @@
     "@babel/preset-react": "7.0.0",
     "babel-loader": "8.0.2",
     "css-loader": "1.0.0",
+    "react-styleguidist": "^9.1.11",
     "style-loader": "0.23.0",
     "webpack": "4.19.1",
     "webpack-cli": "3.1.1",
     "webpack-dev-server": "3.1.8"
   },
   "dependencies": {
+    "dotenv": "^8.0.0",
+    "prop-types": "^15.7.2",
     "react": "16.5.2",
-    "react-dom": "16.5.2"
+    "react-dom": "16.5.2",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode development"
+    "start": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production webpack",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   }
 }
