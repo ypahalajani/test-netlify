@@ -4,29 +4,15 @@ import PropTypes from 'prop-types';
 /**
  * This will be a custom input for our components library.
  */
-class CustomInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 'This is the default text with which this component renders.'
-    }
-    this.inputChangeHandler = this.inputChangeHandler.bind(this);
-  }
 
-  inputChangeHandler(event) {
-    this.setState({
-      value: event.target.value
-    })
-  }
-
-  render() {
+const CustomInput = props => {
     const {
       name,
+      inputRef,
       ...restProps
-    } = this.props;
-    return <input name={name} value={this.state.value} onChange={this.inputChangeHandler} {...restProps}/>;
-  }
-}
+    } = props;
+    return <input name={name} ref={inputRef} {...restProps}/>;
+};
 
 CustomInput.defaultProps = {
   name: 'my-input',
